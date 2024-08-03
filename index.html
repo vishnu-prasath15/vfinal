@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>U&V HealthCare</title>
+    <link rel="stylesheet" href="1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <span class="u-v">U&V</span>
+          <span class="healthcare">HealthCare</span>
+        </div>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button id="btn" class="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <section id="home">
+      <div class="s-container">
+        <div class="content">
+          <h1>
+            Leading the Way to Future HealthCare
+          </h1>
+          <p>dedicated to manufacturing and providing medicines with a commitment
+            to exceptional service,<br>we strive to lead the way in delivering trusted healthcare solutions.
+            </p>
+          <div class="buttons">
+            <a href="#about">Learn More</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="s-container">
+          <div class="content">
+              <h2>About Us</h2>
+              <p class="about-us-paragraph">
+                  Founded by Mr. M.J.Rajkumar, U&V is a Leading community of helath care in the pharmaceutical industry, dedicated
+                  to manufacturing and providing medicines with a commitment to exceptional service. Our
+                  journey began with a vision to enhance healthcare accessibility through innovative 
+                  products and reliable distribution channels. Over the past five years of success,
+                  U&V has established itself as a proof of quality and trust, driven by a passion 
+                  for improving global health outcomes. Our core values of integrity, innovation, and 
+                  dedication have been the pillars of our achievements. At U&V, we are more than just 
+                  a company; we are a community committed to better health for all.
+              </p>
+              <p id="more" class="hidden-paragraph">
+                  We believe in an approach to health and well-being, ensuring that our products and services meet the highest standards of excellence. Join us on our journey to revolutionize healthcare and make a positive impact on the world.
+              </p>
+              <button id="view-more">View More</button>
+          </div>
+          <div class="image">
+              <img src="image 555.jpg" class="about-us-image" alt="Healthcare" />
+          </div>
+      </div>
+  </section>
+  
+  
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <div class="wrapper" id="productWrapper">
+        <div class="product-card">
+            <img src="image 555.jpg" alt="Product 1" class="product-image">
+            <div class="product-content">
+                <h3 class="product-title">Product 1</h3>
+                <p class="product-description">Description of product 1.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="image 555.jpg" alt="Product 2" class="product-image">
+            <div class="product-content">
+                <h3 class="product-title">Product 2</h3>
+                <p class="product-description">Description of product 2.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="image 555.jpg" alt="Product 3" class="product-image">
+            <div class="product-content">
+                <h3 class="product-title">Product 3</h3>
+                <p class="product-description">Description of product 3.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="image 555.jpg" alt="Product 4" class="product-image">
+            <div class="product-content">
+                <h3 class="product-title">Product 4</h3>
+                <p class="product-description">Description of product 4.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="image 555.jpg" alt="Product 5" class="product-image">
+            <div class="product-content">
+                <h3 class="product-title">Product 5</h3>
+                <p class="product-description">Description of product 5.</p>
+            </div>
+        </div>
+        <div class="product-card">
+            <img src="image 555.jpg" alt="Product 6" class="product-image">
+            <div class="product-content">
+                <h3 class="product-title">Product 6</h3>
+                <p class="product-description">Description of product 6.</p>
+            </div>
+        </div>
+    </div>
+    <button id="viewMoreBtn" class="view-more-btn">View More</button>
+    <button id="viewLessBtn" class="view-less-btn">View Less</button>
+    <div class="overlay" id="overlay">
+        <img src="" alt="Full Image" class="full-image" id="fullImage">
+    </div>
+</section>
+    
+
+    <section id="reviews">
+      <div class="reviews-container">
+          <div class="title-container">
+              <h2>Client Reviews</h2>
+          </div>
+          <div class="reviews-wrapper" id="reviews-wrapper">
+              <div class="review-card">
+                  <p>"Great service and top-notch products!"</p>
+                  <span>★★★★★</span>
+              </div>
+              <div class="review-card">
+                  <p>"Highly recommend U&V HealthCare for all healthcare needs."</p>
+                  <span>★★★★☆</span>
+              </div>
+              <!-- Add more review cards as needed -->
+              <div class="new-review">
+                  <h3>Submit Your Review</h3>
+                  <form id="review-form">
+                      <textarea id="review-text" rows="4" placeholder="Write your review here..."></textarea>
+                      <div class="rating">
+                          <span>Rating:</span>
+                          <select id="review-rating">
+                              <option value="5">★★★★★</option>
+                              <option value="4">★★★★☆</option>
+                              <option value="3">★★★☆☆</option>
+                              <option value="2">★★☆☆☆</option>
+                              <option value="1">★☆☆☆☆</option>
+                          </select>
+                      </div>
+                      <button type="submit">Submit</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+  <section id="contact">
+    <div class="s-container">
+      <div class="content">
+        <h2>Contact Us</h2>
+        <div class="founder">
+          <img src="image 555.jpg" alt="Founder" />
+          <p>Founder:   Mr M.J. RajKumar</p>
+        </div>
+        <div class="contact-info">
+          <div class="info-item">
+            <i class="fa-solid fa-envelope"></i>
+            <span>email@example.com</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-solid fa-phone"></i>
+            <span>+99 12 48 76 95</span>
+          </div>
+          <div class="info-item">
+            <i class="fa-brands fa-linkedin"></i>
+            <span>@UVHealthCare</span>
+          </div>
+        </div>
+       
+      </div>
+    </div>
+  </section>
+
+
+    <!-- Back to top button -->
+    <a href="#" class="back-top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <script src="1.js"></script>
+  </body>
+</html>  

@@ -1,0 +1,922 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #111;
+}
+
+/* Base styles for the header and navigation */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f6f6f6;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+header nav {
+  height: 12vh;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.logo .u-v {
+  font-size: 50px;
+  color: #243ca0;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  line-height: 100%;
+}
+
+.logo .healthcare {
+  font-size: 20px;
+  color: black;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+header ul {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  margin-left: auto;
+  
+}
+
+header ul li {
+  margin-left: 0;
+  position: relative;
+}
+
+header ul li a {
+  position: relative;
+  display: block;
+  color: #111;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  transition: 0.2s ease-in;
+}
+
+header ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+header ul li a.active::after {
+  background-color: #243ca0;
+}
+
+header a:hover {
+  color: white;
+}
+
+header a {
+  display: block;
+  color: #111;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header a:hover {
+  background-color: #243ca0;
+  color: white;
+}
+
+
+/* Responsive styles */
+@media (max-width: 1285px) {
+  header nav {
+    width: 90%;
+  }
+  
+  .logo {
+    left: 1rem;
+  }
+
+  #btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    right: 0; /* Move to the right side */
+    background-color: #f6f6f6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: auto; /* Adjusts width based on content */
+    max-width: 100%; /* Ensures it doesn't exceed the screen width */
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .nav-links li a {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo .u-v {
+    font-size: 40px;
+  }
+
+  .logo .healthcare {
+    font-size: 16px;
+  }
+}
+
+/* Hide the button initially */
+#btn {
+  display: none;
+}
+
+
+#home {
+  background-image: url('home.jpg');
+  background-size: cover; /* Ensure the image covers the entire section */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  height: 100vh; /* Set the height of the section, adjust as needed */
+  display: flex; /* To use flexbox for centering content */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+  color: white; /* Text color adjustment for readability */
+  text-align: center; /* Center text */
+  position: relative; /* Positioning for pseudo-elements or overlays */
+}
+
+/* Optionally, add an overlay for better text readability */
+#home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  z-index: 1; /* Ensure overlay is above the background image */
+}
+
+#home .content {
+  position: relative; /* Ensure content is above the overlay */
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
+
+#btn {
+  all: unset;
+  cursor: pointer;
+  transition: 0.5s ease-out;
+  font-size: 30px;
+  display: none;
+}
+
+#btn:hover {
+  transform: rotate(180deg);
+  color: #243ca0;
+}
+
+.s-container {
+  min-height: 80vh;
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.s-container .content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+}
+
+.s-container .content h1 {
+  font-size: 4.9rem;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  padding-top: 8%;
+   /* Ensure h1 takes up remaining space */
+  
+}
+
+.s-container .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.s-container .buttons a {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: 0.3s ease;
+  text-transform: uppercase;
+  background: #243ca0;
+  color: white;
+  text-decoration: none;
+}
+
+.s-container .buttons a:hover {
+  background: white;
+  color: black;
+  transform: translateY(-2px);
+}
+
+.hidden {
+  display: none;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.s-container h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #243ca0;
+  
+  
+}
+/* Centering content on the home page for screens up to 1024px wide */
+@media only screen and (max-width: 1285px) {
+  #home .s-container {
+    width: 100%; /* Set width to 90% of the viewport */
+    margin: 0 auto; /* Center align the container horizontally */
+    text-align: center; /* Center align text within the container */
+    justify-content: center;
+  }
+
+  #home .s-container .content h1 {
+    font-size: 2rem; /* Make the heading larger */
+    padding-top: 5%; /* Add padding above the heading */
+  }
+
+  #home .s-container .content p {
+    font-size: 1.3rem; /* Make the paragraph slightly smaller */
+    margin-top: 1rem; /* Add margin above the paragraph */
+  }
+
+  
+  
+
+  #home .s-container .buttons a {
+    font-size: 0.9rem; /* Adjust button text size */
+    padding: 1rem 1rem; /* Adjust button padding to be smaller */
+  }
+}
+
+/* Centering content on the home page for screens up to 768px wide */
+@media only screen and (max-width: 768px) {
+  #home .s-container {
+    width: 95%; /* Set width to 95% of the viewport */
+    margin: 0 auto; /* Center align the container horizontally */
+    text-align: center; /* Center align text within the container */
+    justify-content: center;
+  }
+
+  #home .s-container .content h1 {
+    font-size: 4rem; /* Make the heading slightly smaller */
+    padding-top: 5%; /* Add padding above the heading */
+  }
+
+  #home .s-container .content p {
+    font-size: 1.3rem; /* Make the paragraph smaller */
+    margin-top: 0.5rem; /* Add margin above the paragraph */
+  }
+
+  
+
+  #home .s-container .buttons a {
+    font-size: 0.8rem; /* Adjust button text size */
+    padding: 1rem 0.75rem; /* Adjust button padding to be smaller */
+  }
+}
+
+/* Centering content on the home page for screens up to 480px wide */
+@media only screen and (max-width: 480px) {
+  #home .s-container {
+    width: 90%; /* Set width to 100% of the viewport */
+    margin: 0 auto; /* Center align the container horizontally */
+    padding: 0rem; /* Add padding around the container */
+    text-align: center; /* Center align text within the container */
+    justify-content: center;
+  }
+
+  #home .s-container .content h1 {
+    font-size: 3rem; /* Make the heading smaller */
+    padding-top: 25%; /* Add padding above the heading */
+  }
+
+  #home .s-container .content p {
+    font-size: 0.9rem; /* Make the paragraph smaller */
+    margin-top: 0.5rem; /* Add margin above the paragraph */
+  }
+
+  
+
+  #home .s-container .buttons a {
+    font-size: 0.7rem; /* Adjust button text size */
+    padding: 1rem 0.5rem; /* Adjust button padding to be smaller */
+  }
+}
+
+
+/* About section */
+
+
+
+
+
+
+#about {
+  padding-top: 10%;
+}
+
+.s-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.content {
+  flex: 1 1 100%;
+  min-width: 300px;
+  text-align: center;
+}
+
+
+ .about-us-paragraph {
+  font-size: 24px; /* Base font size */
+  line-height: 1.5;
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+ #more {
+  font-size: 24px; /* Base font size */
+  line-height: 1.5;
+  margin: 0;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.image {
+  flex: 1 1 100%;
+  min-width: 200px;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.image img {
+  width: 100%;
+  border-radius: 1rem;
+  max-width: 50%;
+  height: auto;
+}
+
+/* Hidden paragraph */
+.hidden-paragraph {
+  display: none;
+}
+
+.hidden-paragraph.show {
+  display: block;
+}
+
+/* View More button */
+#view-more {
+  padding: 0.5rem 0.5rem;
+  border: none;
+  background-color: #243ca0;
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  max-width: 150px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+  right: 0px;
+  left: 0;
+  bottom: -10px;
+}
+
+#view-more:hover {
+  background-color: #243ca0;
+  transform: translateY(-2px);
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1285px) {
+  .about-us-paragraph, .hidden-paragraph {
+    font-size: 20px;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  #more{
+    font-size: 20px;
+  }
+
+  .image img {
+    max-width: 75%;
+  }
+
+  #view-more {
+    left: 60%;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-us-paragraph, .hidden-paragraph {
+    font-size: 18px;
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+  #more{
+    font-size: 18px;
+  }
+
+  .image img {
+    max-width: 100%;
+  }
+
+  #view-more {
+    left: 50%;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .about-us-paragraph, .hidden-paragraph {
+    font-size: 16px;
+    padding-right: 0%;
+    padding-left: 0%;
+  }
+  #more{
+    font-size: 16px;
+  }
+
+  .image img {
+    max-width: 90%;
+  }
+
+  #view-more {
+    left: 0;
+    bottom: -5px;
+  }
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes up the full viewport height */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #fff; /* Optional: Set a background color */
+    
+}
+
+#products {
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 90%;
+    max-width: 1100px; /* Maximum width for larger screens */
+    background: #fff; /* Optional: Set a background color for the products section */
+    
+    margin: 0 auto; /* Center horizontally */
+    position: relative; /* Needed for vertical alignment if used */
+    
+    
+}
+
+#products h2 {
+    font-size: 2.5rem;
+    color: #243ca0;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+    grid-template-rows: repeat(auto-fit, minmax(200px, auto)); /* Adjust rows automatically */
+    gap: 2rem; /* Spacing between grid items */
+    width: 100%; /* Full width within the container */
+}
+
+.product-card {
+    background: #f9f9f9; /* Light background for product cards */
+    border-radius: 1rem;
+    overflow: hidden; /* Ensure content doesn't overflow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    transition: transform 0.3s ease;
+    width: 100%; /* Full width for the product card */
+    height: auto; /* Height adjusts automatically */
+}
+
+.product-card:hover {
+    transform: scale(1.05); /* Enlarge on hover */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+}
+
+.product-image {
+    width: 100%;
+    height: 150px; /* Rectangular shape */
+    object-fit: cover;
+    border-radius: 1rem 1rem 0 0; /* Rounded corners for image */
+}
+
+.product-content {
+    padding: 1rem;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0.1rem 0 0.2rem 0;
+}
+
+.product-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666; /* Dark grey for description text */
+    margin: 0.2rem 0; 
+}
+
+.view-more-btn,
+.view-less-btn {
+    display: none; /* Hide buttons by default */
+    margin: 2rem auto;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: white;
+    background-color: #243ca0;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+        grid-template-rows: auto; /* Adjust rows automatically */
+    }
+
+    .product-card {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+
+    .product-card:nth-child(n+3) {
+        display: none; /* Hide products 3 and beyond */
+    }
+
+    .view-more-btn {
+        display: block; /* Show view more button on mobile */
+    }
+}
+
+.overlay {
+    display: none; /* Hide overlay initially */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.full-image {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+
+#reviews {
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.reviews-container {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+}
+
+.title-container h2 {
+  color: #1e3a8a; /* Royal blue color */
+  font-size: 2em;
+  margin: 0;
+  text-align: center;
+}
+
+.reviews-wrapper {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.review-card {
+  width: 80%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.review-card p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.review-card span {
+  font-size: 1.5rem;
+  color: gold;
+}
+
+.new-review {
+  width: 80%;
+}
+
+.new-review h3 {
+  font-size: 1.5rem;
+  color: #243ca0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+#review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#review-text {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rating select {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+}
+
+#review-form button {
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background: #243ca0;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#review-form button:hover {
+  background: darkblue;
+  transform: translateY(-2px);
+}
+
+
+/* Media Query for mobile view */
+@media (max-width: 1285px) {
+  #reviews {
+      display: block;
+      padding-top: 100px 20px;
+      padding-bottom:10px ;
+  }
+
+  .reviews-container {
+      display: block;
+  }
+
+  .title-container {
+      text-align: center;
+      padding-right: 0;
+      margin-bottom: 20px;
+  }
+
+  .title-container h2 {
+      font-size: 3rem;
+  }
+
+  .reviews-wrapper {
+      width: 100%;
+      align-items: center;
+  }
+
+  .review-card, .new-review {
+      width: 100%;
+  }
+
+  .new-review h3 {
+      font-size: 1.2rem;
+  }
+}
+
+.back-top {
+  display: none;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #243ca0;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.back-top:hover {
+  background-color: darkblue;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  
+  
+  }
+  
+
+  .s-container {
+    display: flex;
+    justify-content: flex-start; /* Aligns items to the start (left) */
+    align-items: flex-start;     /* Aligns items to the top */
+    flex-direction: column;      /* Aligns items in a column */
+  }
+  .info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+  padding-left: 10%;
+  }
+  
+  .info-item i {
+  color: #243ca0;
+  font-size: 2.0rem;
+  
+  }
+  
+  .founder {
+  text-align: center;
+  margin-bottom: 1rem;
+  }
+  
+  .founder img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 0rem;
+  margin-right: 40px;
+  }
+  
+  .founder p {
+  font-size: 1.2rem;
+  color: #243ca0;
+  
+  }
+  
+  .back-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #243ca0;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 50%;
+  display: none;
+  transition: 0.3s ease;
+  text-align: center;
+  }
+
+.back-top:hover {
+background: darkblue;
+}
+
+.back-top i {
+font-size: 1.5rem;
+}
+
+@media (max-width: 1285px) {
+header h1 {
+  font-size: 35px;
+}
+
+header ul {
+  display: none;
+}
+
+header #btn {
+  display: block;
+}
+
+.s-container {
+  flex-direction: column;
+}
+
+#products .wrapper {
+  grid-template-columns: 1fr;
+}
+
+.review-card,
+.new-review {
+  width: 100%;
+}
+}
